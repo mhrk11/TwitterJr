@@ -1,0 +1,45 @@
+{%load static%}
+
+<html>
+<head>
+    <title> Twitter Jr </title>
+    <link href="{%static 'css/base.css' %}" rel='stylesheet'>
+
+</head>
+<body>
+    <header>
+        <div class='nav-left'>
+        <h1> <a href="{%url 'home'%}"> Home </a>
+</h1>
+</div>
+<div class='nav-right'>
+
+{%if user.is_authenticated%}
+<p> Hi {{user.username}} </p>
+<a href="{%url 'logout'%}"> Log Out </a>
+
+{%else%}
+<p> You aren't logged in </p>
+<a href="{%url 'login' %}"> Log In </a>
+{%endif%}
+
+ </div>
+
+</header>
+
+
+<div class='nav-right'>
+
+        <a href="{%url 'new_tweet'%}">+NewTweet </a>
+</div>
+
+
+
+<div>
+    {%block content%}
+    {%endblock content%}
+</div>
+
+
+</body>
+</html>

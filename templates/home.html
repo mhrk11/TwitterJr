@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+
+{%block content%}
+{%for post in tweets_list%}
+<div class='post-entry'>
+
+<h4> <a href="{%url 'tweet_detail' post.pk%}"> {{post.title}} </a> </h4>
+<p> {{post.body}} <em> -{{post.author}} </em></p>
+</div>
+
+
+{%endfor%}
+
+{%endblock content%}
+
+
+

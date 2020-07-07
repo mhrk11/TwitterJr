@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%block content%}
+
+<h1> {{tweet.title}} </h1>
+<p> {{tweet.body}}  <em> -{{tweet.author}} </em></p>
+
+
+
+<a href="{%url 'tweet_update' tweet.pk%}"> +Update Tweet </a>
+<br>
+<br>
+<a href="{%url 'tweet_delete' tweet.pk%}"> -Delete Tweet </a>
+
+
+{%endblock content%}

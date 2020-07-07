@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+<form method='post'>
+    {%csrf_token%}
+    {{form.as_p}}
+<p> Do you want to delete "{{tweet.title}}" tweet </p>
+
+<input type='submit' value='Delete'>
+</form>
+{%endblock content%}
+
+
